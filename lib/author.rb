@@ -1,3 +1,5 @@
+require_relative './post.rb'
+
 class Author
     attr_accessor :name
     @@all = []
@@ -11,20 +13,20 @@ class Author
     #! Above is self methods
     #//                                     
     #! Below is relationship methods
-    def post
-
+    def posts
+        Post.all.select{|post| post.author == self}
     end
 
     def add_post(post_instance)
-        Post.new()
+        post_instance.author = self
     end
 
     def add_post(post_name_string)
-        Post.new()
+        (Post.new(post_name_string)).author = self
     end
 
     def self.post_count
-        Post.all.length
+        Post.all.select{|post| post.author }.count
     end
 
 end

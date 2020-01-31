@@ -30,7 +30,7 @@ class Artist
     # end
 
     # def self.count
-        Song.all.length
+        # Song.all.length
     # end
 
 end

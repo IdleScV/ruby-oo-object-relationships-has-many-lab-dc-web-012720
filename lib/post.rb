@@ -1,5 +1,8 @@
+require_relative './author.rb'
+
 class Post
     attr_reader :title
+    attr_accessor :author
 
     @@all = []
     def initialize(title_string)
@@ -17,11 +20,11 @@ class Post
     #! Below is relationship methods
 
     def author
-
+        @author
     end
 
     def author_name
-
+        @author.name
     end
 
 
